@@ -1,8 +1,9 @@
 (function() {
-    function HomeCtrl() {
-    }
+    function HomeCtrl(Task) {
+      this.tasks = Task.all;
+    };
 
     angular
-        .module('blocChat')
-        .controller('HomeCtrl', [HomeCtrl]);
+        .module('projectName')
+        .controller('HomeCtrl', ['Task', HomeCtrl]);
 })();
