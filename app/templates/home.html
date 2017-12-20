@@ -1,25 +1,33 @@
 <nav class="nav-bar">
-   <h5> Active Tasks | Task History </h5>
- </nav>
+  <h5> Active Tasks | Task History </h5>
+</nav>
 
 <section class="hero-content">
-  <h1 class="hero-title">Current Tasks</h1>
-  </section>
+  <h1 class="hero-title">Leah's ToDo's</h1>
+</section>
 
-  <section class="new-task"
-    <div class="new-task-header"
-    Task Name | Description |Priority
+<section class="new-task">
+  <div class="new-task-header">
+    Task Name | Description | Priority
   </div>
   <div class="new-task-field">
-    <input type="text" name="task-name" value="You have a ton to do!">
-    <input type="text" name="task-description" value="So much that here is a description."
-
- <section class="task-content">
-   <div class="task-list" ng-repeat="task in home.tasks">
-     <h3>{{ task.title }}</h3>
-     <p>Created: {{ task.createdAt }}
-     <p class="task-description">Description: {{ task.description }}</p>
-     <hr class="task-rule">
-   </div>
-
- </section>
+    <input type="text" class="task-field" ng-model="messageTitle" value="You have a ton to do!">
+    <input type="text" class="task-field" ng-model="messageDescription" value="A description.">
+    <select class="priority" ng-model="taskPriority">
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low" >Low</option>
+    </select>
+    <button class="submit" ng-click="home.addTask(messageTitle, messageDescription, taskPriority); clearfunction(this)">Add Task</button>
+  </div>
+</section>
+<section class="task-content">
+  <div class="task-list" ng-repeat="task in home.tasks | orderBy:'priority'">
+    <div ng-hide="home.isHidden(task)">
+       <div>
+    <h3 class ="task-title">{{ task.title }}</h3>
+    <p class="task-priority">Priority: {{ task.priority }} | Created: {{ task.created }}</p>
+    <p class="task-description">Description: {{ task.description }}</p>
+    <hr class="task-rule">
+  </div>
+</section>

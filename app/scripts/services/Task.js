@@ -1,12 +1,11 @@
 (function() {
    function Task($firebaseArray) {
-     var Task = {};
      var ref = firebase.database().ref().child("tasks");
      var tasks = $firebaseArray(ref);
 
      return {
        all: tasks,
-       send: function(newTask) {
+       addTask: function(newTask) {
          tasks.$add(newTask);
        }
      }

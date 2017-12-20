@@ -20,10 +20,10 @@
  }
 
  .hero-content {
-   position: absolute;
+   position: top;
    left: 0;
    top: 3rem;
-   height: 6rem;
+   height: 10rem;
    width: 100%;
    background-color: #f3f3f3;
  }
@@ -35,27 +35,51 @@
  .new-task {
    position: absolute;;
    top: 5rem;
-   width: 6rem;
-   padding: 100%;
+   width: 100%;
+   background-color: #5EB1BF;
  }
 
  .new-task-header {
-   padding: 1rem 0 1rem 2.5rem;
+   padding: 1rem 0 0 1.5rem;
  }
 
  .new-task-field {
-   padding: 0 0 1rem 2.5rem;
+   padding: 0 0 2rem 2.5rem;
  }
 
  .new-task-field input {
    margin: 0 2rem 0 0;
-   width: 30%
+   width: 30%;
  }
 
+ .task-field {
+  margin: 0 1rem 0.25rem 0;
+   padding: 0.25rem;
+   width: 30%;
+   border: none;
+   border-radius: 3px;
+ }
+
+.priority {
+  margin: 0 1rem 0 0;
+  height: 1.75rem;
+ }
+
+ .submit {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 3px;
+  color: #042A2B;
+  padding: 0rem 1rem;
+  text-align: center;
+  display: inline-block;
+}
+
  .task-content {
-   position: relative;
+   position: absolute;;
    left: 0;
-   top: 10rem;
+   top: 12rem;
    height: 100%;
    width: 100%;
  }
@@ -63,6 +87,11 @@
  .task-list {
    top: 5rem;
    padding: 0 2.5rem 0 2.5rem;
+ }
+
+ .task-title {
+   position: relative;
+   left: 0.5rem;
  }
 
 
