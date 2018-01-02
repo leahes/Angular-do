@@ -13,10 +13,19 @@
    font-family: "Fjord One"; serif;
    background-color: #FFFFFF;
  }
+ a:link {
+  color: #042A2B;
+ }
+
+ a:hover {
+  color: #5EB1BF;
+ }
+
 
  .nav-bar {
    position: absolute;
    right: 4rem;
+   background-color: #5EB1BF;
  }
 
  .hero-content {
@@ -94,7 +103,16 @@
    left: 0.5rem;
  }
 
+ .task-checkbox {
+  position: relative;
+  top: auto;
+}
 
+ .archive-title {
+   position: relative;
+   left: 0.5rem;
+   text-decoration: line-through;
+ }
 
  /*@media (min-width: 640px) {
      html { font-size: 120%; }

@@ -1,0 +1,34 @@
+<!-- <nav class="nav-bar">
+  <h5> Active Tasks | Task History </h5>
+</nav> -->
+
+<section class="hero-content">
+  <h1 class="hero-title">Archive</h1>
+</section>
+
+<section class="new-task">
+  <div class="new-task-header">
+    Task Name | Description | Priority
+  </div>
+  <div class="new-task-field">
+    <input type="text" class="task-field" ng-model="task.title" name="title" value="You have a ton to do!">
+    <input type="text" class="task-field" ng-model="task.description" value="A description.">
+    <select class="priority" ng-model="taskPriority">
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low" >Low</option>
+    </select>
+    <button class="submit" ng-click="archive.addTask(messageTitle, messageDescription, taskPriority); clearfunction(this)">Add Task</button>
+  </div>
+</section>
+<section class="task-content">
+  <div class="task-list" ng-repeat="task in archive.tasks | orderBy:'priority'">
+    <div ng-hide="archive.show(task)">
+      <div>
+    <input class="task-checkbox" type="checkbox" ng-click="archive.taskStatus(task)">
+    <h3 class ="archive-title">{{ task.title }}</h3>
+    <p class="task-priority">Priority: {{ task.priority }} | Created: {{ task.created }}</p>
+    <p class="task-description">Description: {{ task.description }}</p>
+    <hr class="task-rule">
+  </div>
+</section>

@@ -1,16 +1,18 @@
 (function() {
   function HomeCtrl(Task,$scope) {
     this.tasks = Task.all;
+    console.log(this.tasks)
     this.taskStatus = function (task) {
-      Task.completeTask(task);
+      Task.completedTask(task);
     }
 
-    this.isHidden = function(task){
-      return task.created < (moment().seconds() - 60) || task.complete == true
+    this.hide = function(task) {
+      console.log(task)
+      return task.created < moment().format() - 0 || task.completed == true
     };
-// moment date and time look up format.
-    this.addTask = function(messageTitle, messageDescription, taskPriority){
-      if (messageTitle){
+
+    this.addTask = function(messageTitle, messageDescription, taskPriority) {
+      if (messageTitle) {
         var newTask = {
           title: messageTitle,
           description: messageDescription,
@@ -28,7 +30,13 @@
     }
   }
 
+  // this.expiredTask = function (created) {
+  //      if (created < Date.now() - 604800000) {
+  //          return true;
+  //        }
+    // }
+
   angular
   .module('projectName')
-  .controller('HomeCtrl', ['Task','$scope', HomeCtrl]);
+  .controller('HomeCtrl', ['Task', '$scope', HomeCtrl]);
 })();

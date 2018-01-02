@@ -1,9 +1,9 @@
-<nav class="nav-bar">
+<!-- <nav class="nav-bar">
   <h5> Active Tasks | Task History </h5>
-</nav>
+</nav> -->
 
 <section class="hero-content">
-  <h1 class="hero-title">Leah's ToDo's</h1>
+  <h1 class="hero-title">Tasks</h1>
 </section>
 
 <section class="new-task">
@@ -11,8 +11,9 @@
     Task Name | Description | Priority
   </div>
   <div class="new-task-field">
-    <input type="text" class="task-field" ng-model="messageTitle" value="You have a ton to do!">
-    <input type="text" class="task-field" ng-model="messageDescription" value="A description.">
+    <input type="text" class="task-field" ng-model="messageTitle" name="title" placeholder="You have a ton to do!">
+    <input type="text" class="task-field" ng-model="messageDescription" placeholder="A description.">
+    <!-- <input type="submit" class="submit" value="Add Task"> -->
     <select class="priority" ng-model="taskPriority">
       <option value="High">High</option>
       <option value="Medium">Medium</option>
@@ -21,13 +22,16 @@
     <button class="submit" ng-click="home.addTask(messageTitle, messageDescription, taskPriority); clearfunction(this)">Add Task</button>
   </div>
 </section>
+
 <section class="task-content">
-  <div class="task-list" ng-repeat="task in home.tasks | orderBy:'priority'">
-    <div ng-hide="home.isHidden(task)">
-       <div>
-    <h3 class ="task-title">{{ task.title }}</h3>
-    <p class="task-priority">Priority: {{ task.priority }} | Created: {{ task.created }}</p>
-    <p class="task-description">Description: {{ task.description }}</p>
-    <hr class="task-rule">
-  </div>
-</section>
+  <div class="task-list" ng-repeat="task in home.tasks | orderBy:'priority'" >
+    <div ng-hide="home.hide(task)">
+      <div>
+        <input class="task-checkbox" type="checkbox" ng-click="home.taskStatus(task)">
+        <h3 class ="task-title">{{ task.title }}</h3>
+        <p class="task-priority">Priority: {{ task.priority }} |  Created: {{ task.created }}</p>
+        <p class="task-description">Description: {{ task.description }}</p>
+        <hr class="task-rule">
+        <hr class= ng-show="{{task.completed}}">
+      </div>
+    </section>
