@@ -1,16 +1,16 @@
 (function() {
-  function ArchiveCtrl(Task) {
+  function HistCtrl(Task) {
     this.tasks = Task.all;
     this.taskStatus = function (task) {
-      Task.incompletedTask(task);
+      Task.expiredTask(task);
     }
 
     this.show = function(task){
       return task.created < moment().format() - 0 && task.complete == false
     };
-    
+
    }
   angular
   .module('projectName')
-  .controller('ArchiveCtrl', ['Task', ArchiveCtrl]);
+  .controller('HistCtrl', ['Task', HistCtrl]);
 })();

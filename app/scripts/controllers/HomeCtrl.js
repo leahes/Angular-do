@@ -1,7 +1,7 @@
 (function() {
   function HomeCtrl(Task,$scope) {
     this.tasks = Task.all;
-    console.log(this.tasks)
+    // console.log(this.tasks)
     this.taskStatus = function (task) {
       Task.completedTask(task);
     }

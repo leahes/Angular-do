@@ -18,6 +18,13 @@
       url: '/archive',
       controller: 'ArchiveCtrl as archive',
       templateUrl: '/templates/archive.html'
+    })
+
+    $stateProvider
+    .state('history', {
+      url:'/history',
+      controller: 'HistCtrl as history',
+      templateUrl: '/templates/history.html'
     });
   }
 

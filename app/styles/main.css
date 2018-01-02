@@ -24,21 +24,21 @@
 
  .nav-bar {
    position: absolute;
-   right: 4rem;
+   right: 3rem;
    background-color: #5EB1BF;
  }
 
  .hero-content {
    position: top;
    left: 0;
-   top: 3rem;
-   height: 10rem;
+   top: 2rem;
+   height: 9rem;
    width: 100%;
-   background-color: #f3f3f3;
+   background-color: grey;
  }
 
  .hero-title {
-   padding: 0 0 0 3rem;
+   padding: 0 0 0 1rem;
  }
 
  .new-task {
@@ -88,7 +88,7 @@
  .task-content {
    position: absolute;;
    left: 0;
-   top: 12rem;
+   top: 25rem;
    height: 100%;
    width: 100%;
  }
@@ -113,6 +113,39 @@
    left: 0.5rem;
    text-decoration: line-through;
  }
+
+ .history-title {
+   position: relative;
+   left: 0.5rem;
+   text-decoration: line-through;
+ }
+
+ table {
+   position: relative;
+   top: 80px;
+   width: 400px;
+   margin: auto;
+ }
+ table th , td  {
+   font-family: sans-serif;
+   padding: 15px;
+   border-style: none;
+ }
+ table th {
+   background-color: #c5c5c5;
+   text-align: left;
+ }
+ table tr {
+   background-color: #f2f1f1;
+ }
+ nav {
+     clear;
+     font-family: sans-serif;
+     max-width: 160px;
+     margin: 0;
+     padding: 1em;
+ }
+
 
  /*@media (min-width: 640px) {
      html { font-size: 120%; }

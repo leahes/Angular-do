@@ -19,14 +19,20 @@
       tasks.$save(task)
     }
 
+    var expiredTask = function (task) {
+      task.completed = false;
+      tasks.$save(task)
+    }
+    
      return {
        all: tasks,
        addTask: function(newTask) {
          tasks.$add(newTask);
        },
-       
+
        completedTask: confirmedCompleted,
-       incompleteTask: confirmedIncompleted
+       incompletedTask: confirmedIncompleted,
+       expiredTask: confirmedIncompleted
      }
    };
 
