@@ -7,8 +7,7 @@
     }
 
     this.hide = function(task) {
-      console.log(task)
-      return task.created < moment().format() - 0 || task.completed == true
+      return task.created < moment().format() - 7 || task.completed == true
     };
 
     this.addTask = function(messageTitle, messageDescription, taskPriority) {
@@ -25,8 +24,13 @@
       $scope.clearfunction = function(event){
         event.messageTitle = null;
         event.messageDescription = null;
-        event.taskPriority = "high";
+        event.taskPriority = "low";
       }
+      // $scope. = function(event) {
+      //   event.isCompleted = true;
+      //   var task = tasks.child(item.$id);
+      //   task.update({ isCompleted: true })
+      // }
     }
   }
 

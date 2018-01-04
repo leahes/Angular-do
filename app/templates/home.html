@@ -12,23 +12,27 @@
     <input type="text" class="task-field" ng-model="messageDescription" placeholder="A description.">
     <!-- <input type="submit" class="submit" value="Add Task"> -->
     <select class="priority" ng-model="taskPriority">
-      <option value="High">High</option>
-      <option value="Medium">Medium</option>
-      <option value="Low" >Low</option>
+      <option value="High">high</option>
+      <option value="Medium">medium</option>
+      <option value="Low">low</option>
     </select>
     <button class="submit" ng-click="home.addTask(messageTitle, messageDescription, taskPriority); clearfunction(this)">Add Task</button>
   </div>
 </section>
 
 <section class="task-content">
-  <div class="task-list" ng-repeat="task in home.tasks | orderBy:'priority'" >
+  <div class="task-list" ng-repeat="task in home.tasks | orderBy:'priority', 'value'" >
     <div ng-hide="home.hide(task)">
       <div>
         <input class="task-checkbox" type="checkbox" ng-click="home.taskStatus(task)">
+        <p ngClass="{active: isActive('/tasks')}">
         <h3 class ="task-title">{{ task.title }}</h3>
-        <p class="task-priority">Priority: {{ task.priority }} |  Created: {{ task.created }}</p>
-        <p class="task-description">Description: {{ task.description }}</p>
-        <hr class="task-rule">
-        <hr class= ng-show="{{task.completed}}">
       </div>
-    </section>
+      <p class="task-priority">Priority: {{ task.priority }} |  Created: {{ task.created }}</p>
+      <p class="task-description">Description: {{ task.description }}</p>
+      <hr class="task-rule">
+      <hr class= ng-show="{{task.completed}}">
+    </div>
+  </div>
+</section>
+ <!-- $scope.add()  -->
