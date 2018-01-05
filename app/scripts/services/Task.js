@@ -1,6 +1,7 @@
 (function() {
-  function Task($scope, $firebaseArray) {
+  function Task($firebaseArray) {
     var ref = firebase.database().ref().child("tasks");
+    console.log($firebaseArray)
     var tasks = $firebaseArray(ref);
 
     var dayOfYearToDate = function dateFromDay(day){

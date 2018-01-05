@@ -11,6 +11,7 @@
     };
 
     this.addTask = function(messageTitle, messageDescription, taskPriority) {
+      console.log(taskPriority);
       if (messageTitle) {
         var newTask = {
           title: messageTitle,
@@ -28,17 +29,11 @@
       }
       // $scope. = function(event) {
       //   event.isCompleted = true;
-      //   var task = tasks.child(item.$id);
+      //   var task = tasks.child();
       //   task.update({ isCompleted: true })
       // }
     }
   }
-
-  // this.expiredTask = function (created) {
-  //      if (created < Date.now() - 604800000) {
-  //          return true;
-  //        }
-    // }
 
   angular
   .module('projectName')

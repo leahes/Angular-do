@@ -12,16 +12,16 @@
     <input type="text" class="task-field" ng-model="messageDescription" placeholder="A description.">
     <!-- <input type="submit" class="submit" value="Add Task"> -->
     <select class="priority" ng-model="taskPriority">
-      <option value="High">high</option>
-      <option value="Medium">medium</option>
-      <option value="Low">low</option>
+      <option value="3">high</option>
+      <option value="2">medium</option>
+      <option value="1">low</option>
     </select>
     <button class="submit" ng-click="home.addTask(messageTitle, messageDescription, taskPriority); clearfunction(this)">Add Task</button>
   </div>
 </section>
 
 <section class="task-content">
-  <div class="task-list" ng-repeat="task in home.tasks | orderBy:'priority', 'value'" >
+  <div class="task-list" ng-repeat="task in home.tasks | orderBy:priority:reverse" >
     <div ng-hide="home.hide(task)">
       <div>
         <input class="task-checkbox" type="checkbox" ng-click="home.taskStatus(task)">
